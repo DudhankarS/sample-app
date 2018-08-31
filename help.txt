@@ -21,3 +21,26 @@ namespace Rextester
         }
     }
 }
+
+/*rearrange*/
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+           string str="123456";
+            int i,j;
+            j=str.Length-1;
+            for(i=0;j>0 && i<str.Length/2;i++,j--){
+            Console.WriteLine(str[i]); 
+            Console.WriteLine(str[j]); 
+            }
+        }
+    }
+}
