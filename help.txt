@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+			//Your code goes here
+			//remove sp char
+			string s="Here is count of charater.some @ test #$ data.";
+			var withoutSpecial = new string(s.Where(c => Char.IsLetterOrDigit(c)|| Char.IsWhiteSpace(c) ).ToArray());
+			Console.WriteLine(withoutSpecial);
+			//no of sentence
+			string[] tokens = s.Split('.');
+			Console.WriteLine(tokens.Count()-1);
+			//lenght
+			Console.WriteLine(s.Length);
+        }
+    }
+}
