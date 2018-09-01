@@ -27,6 +27,7 @@ namespace Rextester
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Rextester
 {
@@ -34,13 +35,29 @@ namespace Rextester
     {
         public static void Main(string[] args)
         {
-           string str="123456";
-            int i,j;
-            j=str.Length-1;
-            for(i=0;j>0 && i<str.Length/2;i++,j--){
-            Console.WriteLine(str[i]); 
-            Console.WriteLine(str[j]); 
-            }
+            //Your code goes here
+            Console.WriteLine("Hello, world!");
+            int[] arr = {1,2,3,4,5,6,7,8};
+            ReverseArray(arr);
+        }
+        static void ReverseArray<T>(T[] a)
+        {
+            ReverseArray(a,0,a.Length-1,a.Length/2);
+        }
+
+       static void ReverseArray<T>(T[] a,int lo,int hi,int mid)
+        {
+           
+            if(lo > hi) return;
+
+            // swap
+            var temp = a[lo];
+            a[lo] = a[hi];
+            a[hi] = temp;
+            Console.Write(a[hi]);
+           if(mid>lo)
+            Console.Write(a[lo]);
+            ReverseArray(a,lo+1,hi-1,mid);
         }
     }
 }
