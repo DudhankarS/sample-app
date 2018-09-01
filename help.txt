@@ -67,25 +67,28 @@ namespace Rextester
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
-public class Program
+namespace Rextester
 {
-	public static void Main(string[] args)
-	{
-		int[] x= new int[]{4,5,6,2};	
-		int min = 0;
-		int max = 0;
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //Your code goes here
+            Console.WriteLine("Hello, world!");
+            int[] intArray = {9,2,3,4,1,6,0,8};
+            int min=Minimum(intArray, intArray.Length-1);
+            Console.WriteLine("min "+min);
 
-		for (int i = 1; i < x.Length; i++)
-		{
-			if (x[min] > x[i])
-				min = i;
-			if (x[max] < x[i])
-				max = i;
-		}
-		int temp = x[min];
-		Console.Write(temp);
-		x[min] = x[max];
-		x[max] = temp;
-	}
+        }
+        static Int32 Minimum(Int32[] arr, Int32 lastArrayIndex)
+        {
+            Int32 tmp;
+            if (lastArrayIndex == 0) return arr[lastArrayIndex];
+            tmp = Minimum(arr, lastArrayIndex - 1);
+            if (arr[lastArrayIndex] < tmp) return arr[lastArrayIndex];
+            return tmp;
+        }
+    }
 }
